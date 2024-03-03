@@ -1,0 +1,63 @@
+<h2 mat-dialog-title>PRODUCTO</h2>
+<mat-dialog-content class="mat-typography">
+
+<form [formGroup]="agregar">
+
+  <mat-form-field appearance="fill">
+    <mat-label>Descripcion</mat-label>
+    <input matInput placeholder="descripcion" formControlName="descripcion">
+    <mat-error *ngIf="descripcion?.invalid" >{{ error_descripcion ()}}</mat-error>
+  </mat-form-field>
+
+    <mat-form-field appearance="fill" >
+      <mat-label>imagen</mat-label>
+      <input matInput placeholder="imagen"formControlName="imagen">
+      <mat-error *ngIf="imagen?.invalid" >{{ error_imagen ()}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" >
+      <mat-label>cantidad_minima</mat-label>
+      <input matInput placeholder="12"formControlName="cantidad_minima">
+      <mat-error *ngIf="cantidad_minima?.invalid" >{{ error_cantidad_minima ()}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" >
+      <mat-label>stock</mat-label>
+      <input matInput placeholder="10"formControlName="stock">
+      <mat-error *ngIf="stock?.invalid" >{{ error_stock ()}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" >
+      <mat-label>precio_compra</mat-label>
+      <input matInput placeholder="15"formControlName="precio_compra">
+      <mat-error *ngIf="precio_compra?.invalid" >{{ error_precio_compra ()}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" >
+      <mat-label>precio_venta</mat-label>
+      <input matInput placeholder="16"formControlName="precio_venta">
+      <mat-error *ngIf="precio_venta?.invalid" >{{ error_precio_venta ()}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" >
+      <mat-label>categoria_id</mat-label>
+      <input matInput placeholder="pildoras"formControlName="categoria_id">
+      <mat-error *ngIf="categoria_id?.invalid" >{{ error_categoria_id ()}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" >
+      <mat-label>tipo</mat-label>
+      <input matInput placeholder="tipo"formControlName="tipo">
+      <mat-error *ngIf="tipo?.invalid" >{{ error_tipo ()}}</mat-error>
+    </mat-form-field>
+
+  </form>
+</mat-dialog-content>
+
+
+<mat-dialog-actions align="end">
+  <button mat-dialog-close class="btn btn-danger">Cancelar</button>
+  <button [mat-dialog-close]="agregar"  class="btn btn-primary" [disabled]="agregar.invalid">Guardar</button>
+</mat-dialog-actions>
+
+

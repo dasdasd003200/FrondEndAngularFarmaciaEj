@@ -1,0 +1,34 @@
+<p class="h1">Productos</p>
+
+<button class="btn btn-lg btn-success" (click)="openDialog()"><mat-icon>add_shopping_cart</mat-icon> Agregar</button>
+<table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">descripcion</th>
+      <th scope="col">imagen</th>
+      <th scope="col">cantidad_minima</th>
+      <th scope="col">stock</th>
+      <th scope="col">opciones</th>
+
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of productos">
+      <td>{{ item.id }}</td>
+      <td>{{ item.descripcion }}</td>
+      <td>{{ item.imagen }}</td>
+      <td>{{ item.cantidad_minima }}</td>
+
+      <td>{{ item.stock }}</td>
+      <td>
+        <button class="btn btn-xm btn-success"><mat-icon>refresh</mat-icon></button>
+        <button class="btn btn-xm btn-danger" (click)="eliminar_pro(item)" ><mat-icon>delete</mat-icon></button>
+      </td>
+
+
+    </tr>
+  </tbody>
+</table>
+

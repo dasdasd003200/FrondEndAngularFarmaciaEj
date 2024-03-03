@@ -1,0 +1,33 @@
+<p class="h1">Clientes</p>
+<button class="btn btn-lg btn-success" (click)="openDialog()"><mat-icon>person_add</mat-icon> Agregar</button>
+<table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">nombre</th>
+      <th scope="col">email</th>
+      <th scope="col">opciones</th>
+
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of clientes">
+      <td>{{ item.id }}</td>
+      <td>{{ item.nombre }}{{ item.apellido }}</td>
+      <td>{{ item.email }}</td>
+
+      <td>
+        <button class="btn btn-xm btn-success"><mat-icon>refresh</mat-icon></button>
+        <button class="btn btn-xm btn-danger" (click)="eliminar(item)" ><mat-icon>delete</mat-icon></button>
+      </td>
+
+
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+

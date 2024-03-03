@@ -1,0 +1,50 @@
+<h2 mat-dialog-title>Usuario</h2>
+<mat-dialog-content class="mat-typography">
+
+<form [formGroup]="agregar">
+
+  <mat-form-field appearance="fill">
+    <mat-label>Nombre</mat-label>
+    <input matInput placeholder="Juan" formControlName="nombre">
+    <mat-error *ngIf="nombre?.invalid" >{{ error_nombre ()}}</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" >
+    <mat-label>Apellido</mat-label>
+    <input type="password" matInput placeholder="Perez" formControlName="apellido">
+    <mat-error *ngIf="apellido?.invalid" >{{ error_apellido ()}}</mat-error>
+  </mat-form-field>
+
+    <mat-form-field appearance="fill" >
+      <mat-label>Usuario</mat-label>
+      <input matInput placeholder="dasdasd"formControlName="username">
+      <mat-error *ngIf="username?.invalid" >{{ error_username ()}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" >
+      <mat-label>Contraseña</mat-label>
+      <input type="password" matInput placeholder="********" formControlName="password">
+      <mat-error *ngIf="password?.invalid" >{{ error_password ()}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" >
+      <mat-label>Imagen</mat-label>
+      <input matInput placeholder="image"formControlName="imagen">
+       <mat-error *ngIf="imagen?.invalid" >{{ error_imagen ()}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" >
+      <mat-label>Email</mat-label>
+      <input type="email" matInput placeholder="ejempo@gmail.com"formControlName="email">
+       <mat-error *ngIf="email?.invalid" >{{ error_email ()}}</mat-error>
+    </mat-form-field>
+  </form>
+
+</mat-dialog-content>
+
+
+<mat-dialog-actions align="end">
+  <button mat-dialog-close class="btn btn-danger">Cancelar</button>
+  <button [mat-dialog-close]="agregar"  class="btn btn-primary" [disabled]="agregar.invalid">Guardar</button>
+</mat-dialog-actions>
+
